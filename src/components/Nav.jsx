@@ -7,7 +7,7 @@ import {signIn, signOut, useSession, getProviders} from "next-auth/react";
 
 const Nav = () => {
     const isUserLoggedIn = true;
-    const [providers, setProviders] = useState<any>(null);
+    const [providers, setProviders] = useState(null);
     const [toggleDropdown, setToggleDropdown] = useState(false);
 
     useEffect(() => {
@@ -40,8 +40,8 @@ const Nav = () => {
                         <>
                             {providers && Object.values(providers).map((provider) =>
                                 (
-                                    <button type={'button'} key={(provider as { id: string; name: string }).name}
-                                            onClick={() => signIn((provider as { id: string; name: string }).name)}
+                                    <button type={'button'} key={(provider.name)} //key={(provider as { id: string; name: string }).name}
+                                            onClick={() => signIn((provider.name))} //key={(provider as { id: string; name: string }).name}
                                             className={'black_btn'}>Sign In</button>
                                 )
                             )}
@@ -74,8 +74,8 @@ const Nav = () => {
                     (<>
                         {providers && Object.values(providers).map((provider) =>
                             (
-                                <button type={'button'} key={(provider as { id: string; name: string }).name}
-                                        onClick={() => signIn((provider as { id: string; name: string }).name)}
+                                <button type={'button'} key={provider.name} //key=((provider as { id: string; name: string }).name)}
+                                        onClick={() => signIn(provider.name)} //signIn((provider as { id: string; name: string }).name)}
                                         className={'black_btn'}>Sign In</button>
                             )
                         )}

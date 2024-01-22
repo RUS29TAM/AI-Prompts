@@ -6,11 +6,11 @@ export const metadata = {
     title: 'Next App',
     description: 'Discover & Share AI Prompts'
 }
-// const RootLayout = ({children}: {
-//     children: React.ReactNode
-// }) => {
+const RootLayout = ({children}: {
+    children: React.ReactNode
+}) => {
 
-    const RootLayout = ({children}) => {
+    // const RootLayout = ({children}) => {
     return (
         <html lang={'en'}>
         <body>
